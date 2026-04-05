@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeworkTracker | Professional Academic Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #0ea5e9;
+            --bg: #050505;
+            --surface: #0f1115;
+            --border: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 10%; display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 0 20px; background: radial-gradient(circle at center, #1e1b4b 0%, #050505 100%);
+        }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; letter-spacing: -3px; margin-bottom: 20px; }
+        .hero p { max-width: 700px; color: var(--text-dim); font-size: 1.2rem; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+
+        /* Content Blocks */
+        .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 100px; align-items: center; }
+        .content-box { padding: 40px; background: var(--surface); border-radius: 24px; border: 1px solid var(--border); height: 100%; }
+        h2 { font-size: 2.5rem; margin-bottom: 20px; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.4s; border: 1px solid var(--border); }
+        .gallery img:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+        /* Full Interview */
+        .interview-container { background: #111; padding: 60px; border-radius: 30px; border: 1px solid var(--border); }
+        .chat-bubble { margin-bottom: 25px; padding: 25px; border-radius: 20px; position: relative; }
+        .question { background: var(--primary); margin-right: 15%; border-bottom-left-radius: 0; font-weight: 700; }
+        .answer { background: var(--border); margin-left: 15%; border-bottom-right-radius: 0; color: #e2e8f0; }
+
+        /* Authors */
+        .author-card { display: flex; align-items: center; gap: 30px; background: var(--surface); padding: 40px; border-radius: 32px; border: 1px solid var(--border); }
+        .author-img { width: 180px; height: 180px; border-radius: 24px; object-fit: cover; border: 2px solid var(--primary); }
+        .author-info h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--secondary); }
+
+        /* Tech Badges */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .tag { padding: 8px 16px; background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary); border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: var(--primary); }
+
+        footer { text-align: center; padding: 100px 20px; border-top: 1px solid var(--border); color: var(--text-dim); }
+
+        @media (max-width: 900px) { .section-grid { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div style="font-weight: 800; font-size: 1.2rem; color: var(--primary);">HW.TRACKER</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#demo">Functionality</a>
+        <a href="#interview">Interview</a>
+        <a href="#team">Team</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Redefining Productivity</h1>
+    <p>A comprehensive academic management system built by students, for students. Bridging the gap between messy notebooks and digital excellence.</p>
+</section>
+
+<div class="container">
+    
+    <section id="about" class="section-grid">
+        <div class="content-box">
+            <h2>01. Project Vision</h2>
+            <p>HomeworkTracker was conceived as a response to the fragmented nature of current school platforms. While systems like Edupage focus on administrative reporting, students are left without a personal tool for <strong>self-management</strong>.</p>
+            <p>Our goal was to create a centralized "Academic OS" where a student can document every specific instruction, deadline, and resource in one place. By focusing on a minimalist UI, we eliminate "app fatigue" and allow users to focus on what matters: their studies.</p>
+        </div>
+        <div class="content-box">
+            <h2>The Problem</h2>
+            <p>Modern students manage over 10 subjects simultaneously. Information is often lost across messengers, paper diaries, and verbal instructions. This leads to missed deadlines and unnecessary stress.</p>
+            <p><strong>The Solution:</strong> A web-based hub that follows you from the school laptop to your home computer, ensuring constant access to your task list.</p>
+        </div>
+    </section>
+
+    <section id="demo">
+        <div class="content-box" style="margin-bottom: 40px; text-align: center;">
+            <h2>02. Core Functionality</h2>
+            <p>Explore the architecture of the HomeworkTracker system through our interactive gallery.</p>
+        </div>
+        <div class="gallery">
+            <img src="1.jpg" alt="Dashboard View">
+            <img src="2.jpg" alt="Task Entry System">
+            <img src="3.jpg" alt="Calendar Implementation">
+            <img src="4.jpg" alt="Deadline Algorithm">
+            <img src="5.jpg" alt="Responsive Design">
+            <div class="content-box" style="display: flex; flex-direction: column; justify-content: center;">
+                <p><strong>Smart Sorting:</strong> Tasks are prioritized by urgency.</p>
+                <p><strong>Archiving:</strong> Review completed tasks to track progress.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="interview" style="margin-top: 100px;">
+        <h2 style="text-align: center; margin-bottom: 50px;">03. Full Sponsor Interview</h2>
+        <div class="interview-container">
+            <div class="chat-bubble question">What does your product consist of?</div>
+            <div class="chat-bubble answer">Our product will allow students to write down their assignments for the week or for a specific deadline themselves, meaning the subject, the task, and the deadline.</div>
+            
+            <div class="chat-bubble question">Is this application only for students?</div>
+            <div class="chat-bubble answer">Yes, students will use it primarily. However, it's flexible—adults can use it as a planner for work goals or additional courses. But our main focus remains school projects.</div>
+
+            <div class="chat-bubble question">Why a website and not a native application?</div>
+            <div class="chat-bubble answer">A website is more accessible during school hours. Since phones are often restricted in classrooms, students can easily manage their tasks using school laptops and the web interface.</div>
+
+            <div class="chat-bubble question">How will the tasks be sorted?</div>
+            <div class="chat-bubble answer">Currently, sorting is based on deadlines. We are taking feedback into account to implement goal-based sorting and a full monthly calendar view for better visual planning.</div>
+
+            <div class="chat-bubble question">Can you mark tasks as completed?</div>
+            <div class="chat-bubble answer">Absolutely. We’ve implemented a status-tracking feature. Marking a task as "Done" is crucial for a student’s sense of progress and effective time management.</div>
+
+            <div class="chat-bubble question">What about reminders and notifications?</div>
+            <div class="chat-bubble answer">That is an important feature we want to tackle next. While difficult to implement in the initial web version, we are researching ways to add push notifications for upcoming deadlines.</div>
+        </div>
+    </section>
+
+    <section class="section-grid" style="margin-top: 100px;">
+        <div class="content-box">
+            <h2>04. Technical Architecture</h2>
+            <p>We chose a robust tech stack to ensure the platform is both fast and scalable. The frontend is built for speed, while the backend handles complex data logic.</p>
+            <div class="tech-tags">
+                <span class="tag">HTML5 / Semantic UI</span>
+                <span class="tag">CSS3 / Custom Variables</span>
+                <span class="tag">JavaScript / DOM Manipulation</span>
+                <span class="tag">Python / Anvil Framework</span>
+                <span class="tag">GitHub Actions / Deployment</span>
+            </div>
+        </div>
+        <div class="content-box">
+            <h2>Development Roadmap</h2>
+            <ul>
+                <li><strong>Phase 1:</strong> UI Wireframing & Logic Mapping (Week 1)</li>
+                <li><strong>Phase 2:</strong> Database Integration & Task CRUD (Week 2)</li>
+                <li><strong>Phase 3:</strong> Beta Testing & UI Polishing (Week 3)</li>
+                <li><strong>Phase 4:</strong> Final Launch & Documentation (Week 4)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2 style="text-align: center; margin-bottom: 50px;">05. The Minds Behind the Project</h2>
+        <div style="display: grid; gap: 20px;">
+            <div class="author-card">
+                <img src="edil.jpg" alt="Edil" class="author-img" onerror="this.src='https://via.placeholder.com/180/6366f1/fff?text=EDIL'">
+                <div class="author-info">
+                    <h3>EDIL</h3>
+                    <p><strong>Role:</strong> Lead UI/UX Designer & Frontend Architect</p>
+                    <p>Edil is responsible for the visual identity of HomeworkTracker. His focus was on creating a distraction-free environment that adheres to modern design principles, ensuring the interface is intuitive for students of all ages.</p>
+                </div>
+            </div>
+            <div class="author-card" style="flex-direction: row-reverse; text-align: right;">
+                <img src="khamza.jpg" alt="Khamza" class="author-img" onerror="this.src='https://via.placeholder.com/180/0ea5e9/fff?text=KHAMZA'">
+                <div class="author-info">
+                    <h3>KHAMZA</h3>
+                    <p><strong>Role:</strong> System Architect & Backend Developer</p>
+                    <p>Khamza led the development of the system's core logic. He managed the data flow between the user interface and the Python-based backend, ensuring that task sorting and status tracking operate with 100% accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 HomeworkTracker Team. All Information Publicly Accessible via GitHub.</p>
+    <p style="margin-top: 10px; font-size: 0.7rem; color: #444;">Built with passion during Spring Break 2026.</p>
+</footer>
+
+</body>
+</html>
